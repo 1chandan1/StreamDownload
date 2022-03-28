@@ -14,7 +14,7 @@ while True:
         m3u8_master = m3u8.loads(r.text)
         m3u8_master.data['playlists'][-1]['uri']
         url = input(
-            "It may be the master m3u8 link. Enter link of indivisual resolution which you want :\n"
+            "\nIt may be the master m3u8 link. Enter link of indivisual resolution which you want :\n"
         )
         continue
     except:
@@ -24,12 +24,12 @@ while True:
         Playlist = m3u8.loads(r.text)
         tsfile = Playlist.data['segments']
         if tsfile == []:
-            url = input("Enter correct Link :")
+            url = input("\nEnter correct Link :")
             continue
         break
     except:
-        url = input("Enter correct Link :")
-print("Press Enter to STOP")
+        url = input("\nEnter correct Link :")
+print("\nPress Enter to STOP\n")
 
 
 def downLink():
@@ -38,7 +38,7 @@ def downLink():
     while True:
         global stop
         if stop:
-            print("STOP")
+            print("\nSTOP")
             break
         r = requests.get(url)
         Playlist = m3u8.loads(r.text)
